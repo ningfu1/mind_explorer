@@ -1,9 +1,14 @@
 export interface Step {
-  question: {};
+  test: string;
   choices: [
     {
       answer: string;
       point: number;
     }
   ];
+}
+
+export interface Store {
+  set: [Step];
+  results: [number];
 }
