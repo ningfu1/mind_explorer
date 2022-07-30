@@ -8,6 +8,12 @@ export interface Step {
   ];
 }
 
+export interface sentTest {
+  test: string;
+  choices?: string[];
+  result?: string;
+}
+
 export interface Store {
   set: [Step];
   results: [number];
