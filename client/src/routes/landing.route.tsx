@@ -10,13 +10,15 @@ const Landing = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'row',
+        flexDirection: 'column',
         width: '100%',
         height: '100vh',
       }}
-      onClick={handleStart}
     >
-      <Badge size="md" bg="gray.700" color="brand.orange">
+      <Badge size="sm" bg="whiteAlpha.100" borderRadius="0px">
+        Hi there! What is your personality type? Let's find out
+      </Badge>
+      <Badge size="md" bg="gray.300" color="brand.orange" onClick={handleStart}>
         Start Personality Test
       </Badge>
     </div>
