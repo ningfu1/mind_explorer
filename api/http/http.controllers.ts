@@ -13,7 +13,7 @@ const quiz = {
 
 const evaluate_answer = (answer: string, set: [Step], step: number): number => {
   logger.debug(`evaluating answer on test ${step}`);
-  return set[step - 1].choices.find((choice) => choice.answer === answer).point;
+  return set[step]?.choices.find((choice) => choice.answer === answer)?.point;
 };
 
 // add up all scores
@@ -38,10 +38,10 @@ const handle = (req: Request, res: Response) => {
 
   if (test) {
     return res.status(200).json({
-      test: { ...test, choices: test.choices.map((choice) => choice.answer) },
+      quiz: { ...test, choices: test.choices.map((choice) => choice.answer) },
     });
   }
-
+  cache.del(sid);
   const result: string = process_result(store.results);
   res.status(200).json({
     result,
