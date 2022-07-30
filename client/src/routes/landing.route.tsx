@@ -16,7 +16,7 @@ const Landing = () => {
       }}
     >
       <Badge size="sm" bg="whiteAlpha.100" borderRadius="0px">
-        Hi there! What is your personality type? Let's find out
+        Hi there! What is your personality type?
       </Badge>
       <Badge size="md" bg="gray.300" color="brand.orange" onClick={handleStart}>
         Start Personality Test

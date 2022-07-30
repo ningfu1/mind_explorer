@@ -10,14 +10,16 @@ import Result from './routes/result.route';
 function App() {
   const [result, setResult] = useState('');
   return (
-    <ChakraProvider theme={theme}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/quiz" element={result ? <Result value={result} /> : <Quiz setResult={setResult} />} />
-        </Routes>
-      </Router>
-    </ChakraProvider>
+    <div className="App">
+      <ChakraProvider theme={theme}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/quiz" element={result ? <Result value={result} /> : <Quiz setResult={setResult} />} />
+          </Routes>
+        </Router>
+      </ChakraProvider>
+    </div>
   );
 }
 

@@ -30,8 +30,10 @@ const Quiz = (props: any) => {
       style={{
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
         flexDirection: 'column',
         width: '80%',
+        height: '100vh',
       }}
     >
       <Question value={question}></Question>
