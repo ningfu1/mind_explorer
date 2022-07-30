@@ -14,7 +14,7 @@ const theme = extendTheme({
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: '40px',
-        width: '200px',
+        width: '300px',
         borderRadius: '50px',
         cursor: 'pointer',
       },

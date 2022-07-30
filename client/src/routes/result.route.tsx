@@ -12,8 +12,8 @@ const Result = (props: { value: string }) => {
         height: '100vh',
       }}
     >
-      <Badge size="md" bg="gray.700" color="brand.orange">
-        {props.value}
+      <Badge size="md" bg="gray.700" color="gray.100">
+        You're so {props.value} 🍸
       </Badge>
     </div>
   );

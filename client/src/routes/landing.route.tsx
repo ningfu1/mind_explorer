@@ -17,7 +17,7 @@ const Landing = () => {
       onClick={handleStart}
     >
       <Badge size="md" bg="gray.700" color="brand.orange">
-        Start Quiz
+        Start Personality Test
       </Badge>
     </div>
   );
