@@ -17,6 +17,7 @@ const validate_sid = (req: Request, res: Response, next: NextFunction) => {
   if (!store) {
     let id = uuid.get();
     res.cookie('sid', id, { maxAge: 15 * 60 * 1000 });
+    logger.debug(`signed new session id ${id}`);
     // proceed the request with the recently signed cookie
     req.cookies = {
       sid: id,

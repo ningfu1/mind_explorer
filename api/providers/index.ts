@@ -4,7 +4,7 @@ import cache from '../cache';
 import logger from '../utils/logger';
 
 const setQuizData = () => {
-  logger.info('seeding database');
+  logger.debug('seeding database');
   const quiz_data: [Step] = JSON.parse(
     fs.readFileSync(`${__dirname}/data.json`, {
       encoding: 'utf-8',
@@ -16,7 +16,7 @@ const setQuizData = () => {
 
 /* generate random set of questions for a single user */
 const generate = (data: [Step]) => {
-  logger.info('generating random set of questions');
+  logger.debug('generating random set of questions');
   data.forEach((item, index) => {
     let randomIndex = Math.floor(Math.random() * (data.length - 1));
     [data[index], data[randomIndex]] = [data[randomIndex], data[index]];
