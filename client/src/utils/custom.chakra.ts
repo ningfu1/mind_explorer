@@ -9,6 +9,15 @@ const theme = extendTheme({
   },
   components: {
     Badge: {
+      baseStyle: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: '40px',
+        width: '200px',
+        borderRadius: '50px',
+        cursor: 'pointer',
+      },
       sizes: {
         md: {
           h: '50px',
@@ -24,13 +33,15 @@ const theme = extendTheme({
     },
     Text: {
       baseStyle: {
-        bg: 'gray.100',
-        color: 'brand.blue',
-        padding: '20px 30px',
+        bg: 'brand.blue',
+        color: 'brand.orange',
+        padding: '20px 40px',
         borderRadius: '50px',
         display: 'flex',
         justifyContent: 'center',
         width: '50%',
+        margin: '5px',
+        cursor: 'pointer',
       },
     },
   },
