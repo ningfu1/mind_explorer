@@ -2,13 +2,23 @@ import express, { Application } from 'express';
 import dotenv from 'dotenv';
 import http from 'node:http';
 import logger from './utils/logger';
-import { setQuizData, generate } from './providers';
-import cache from './cache';
+import { setQuizData } from './providers';
+import router from './http/express.router';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
 dotenv.config();
 
 // create express listener function
 const app: Application = express();
+app.use(
+  cors({
+    origin: ['http://localhost:3000'],
+    credentials: true,
+  })
+);
+app.use(cookieParser());
+app.use(router);
 
 const PORT = process.env.PORT || 2700;
 
