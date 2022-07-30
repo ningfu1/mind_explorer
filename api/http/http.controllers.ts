@@ -4,9 +4,7 @@ import logger from '../utils/logger';
 import cache from '../cache';
 
 const quiz = {
-  next: (set: [Step], step: number): string | undefined => {
-    return set[step]?.test;
-  },
+  next: (set: [Step], step: number) => set[step],
   write_answer: (sid: string, score: number, store: Store): void => {
     store.results.push(score);
     cache.set(sid, store, 15 * 60);
@@ -40,7 +38,7 @@ const handle = (req: Request, res: Response) => {
 
   if (test) {
     return res.status(200).json({
-      test,
+      test: { ...test, choices: test.choices.map((choice) => choice.answer) },
     });
   }
 
