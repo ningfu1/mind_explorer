@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from '../utils/axios';
 import { API_URL } from 'src/utils/api.utils';
 import { sentTest } from '@types';
+import { Text } from '@chakra-ui/react';
 
 const Quiz = (props: any) => {
   const [step, setStep] = useState(0);
@@ -36,6 +37,9 @@ const Quiz = (props: any) => {
         height: '100vh',
       }}
     >
+      <Text bg="whiteAlpha.100" color="gray.400">
+        Step {step}
+      </Text>
       <Question value={question}></Question>
       {choices?.map((choice) => (
         <Answer key={choice} value={choice} step={step} setStep={setStep} setAnswer={setAnswer} />
