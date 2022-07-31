@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --silent",
     "dev": "ts-node-dev --respawn index.ts"
   },
   "keywords": [],
