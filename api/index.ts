@@ -28,3 +28,5 @@ server.listen(PORT, () => {
   logger.success(`Server is listening on port ${PORT}`);
   setQuizData();
 });
+
+export { app, server };
