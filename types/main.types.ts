@@ -15,6 +15,6 @@ export interface sentTest {
 }
 
 export interface Store {
-  set: [Step];
-  results: [number];
+  set: Step[];
+  results: number[];
 }

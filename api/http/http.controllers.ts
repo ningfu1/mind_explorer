@@ -4,20 +4,20 @@ import logger from '../utils/logger';
 import cache from '../cache';
 
 const quiz = {
-  next: (set: [Step], step: number) => set[step],
+  next: (set: Step[], step: number) => set[step],
   write_answer: (sid: string, score: number, store: Store): void => {
     store.results.push(score);
     cache.set(sid, store, 15 * 60);
   },
 };
 
-const evaluate_answer = (answer: string, set: [Step], step: number): number => {
+const evaluate_answer = (answer: string, set: Step[], step: number): number => {
   logger.debug(`evaluating answer on test ${step}`);
   return set[step]?.choices.find((choice) => choice.answer === answer)?.point;
 };
 
 // add up all scores
-const process_result = (results: [number]) => {
+const process_result = (results: number[]) => {
   let score = 0;
   results.forEach((r) => (score += r));
   return score > (results.length * 3) / 2 ? 'extrovert' : 'introvert';
